@@ -1,0 +1,14 @@
+.field-input-form {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid #4a4949;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #ffffff;
+    padding: 8px 16px;
+}
+
+.field-input-form::placeholder {
+    color: #4a4949;
+}
