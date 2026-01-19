@@ -2,6 +2,7 @@ import './App.css'
 import { Banner } from './components/Banner'
 import { FormEvents } from './components/FormEvents'
 import { Theme } from './components/Theme'
+import { CardEvent } from './components/CardEvent'
 
 // In react, each component is a function.
 
@@ -37,6 +38,15 @@ function App() {
     }
   ]
 
+  const events = [
+    {
+      folder: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
+      theme: themes[0],
+      date: new Date(),
+      title: 'Women in Front'
+    }
+  ]
+
   return (
     <main>
       <header>
@@ -47,14 +57,15 @@ function App() {
 
       <FormEvents />
 
-      <section>
-        <Theme theme={themes[0]} />
-        <Theme theme={themes[1]} />
-        <Theme theme={themes[2]} />
-        <Theme theme={themes[3]} />
-        <Theme theme={themes[4]} />
-        <Theme theme={themes[5]} />
-      </section>
+      {themes.map(function (item) {
+        return (
+          <section>
+            <Theme key={item.id} theme={item} />
+            <CardEvent key={events[0]} event={events[0]} />
+          </section>
+        )
+      })}
+
     </main>
   )
 }
