@@ -8,7 +8,7 @@ export function CardEvent({ event }) {
                 <p className='card-tag'>
                     {event.theme.name}
                 </p>
-                <p>
+                <p className='card-date'>
                     {event.date.toLocaleDateString('pt-BR')}
                 </p>
                 <h4 className='card-title'>
