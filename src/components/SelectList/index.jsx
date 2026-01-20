@@ -1,9 +1,16 @@
 import './select-list.styles.css';
 
-export function SelectList({ items, onSelect }) {
+export function SelectList({ items, ...rest }) {
     return (
-        <select className='select-list-form'>
-            <option value=""></option>
+        <select {...rest} className='select-list-form' defaultValue="">
+            <option value="" key="0" disabled>
+                Select an option
+            </option>
+            {items.map(function (item) {
+                return <option value={item.id} key={item.id}>
+                    {item.name}
+                </option>
+            })}
         </select>
     )
 }

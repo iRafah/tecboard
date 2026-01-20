@@ -55,11 +55,11 @@ function App() {
 
       <Banner />
 
-      <FormEvents />
+      <FormEvents themes={themes} />
 
       {themes.map(function (item) {
         return (
-          <section>
+          <section key={item.id}>
             <Theme key={item.id} theme={item} />
             <CardEvent key={events[0]} event={events[0]} />
           </section>

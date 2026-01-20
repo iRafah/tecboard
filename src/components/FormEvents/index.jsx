@@ -8,15 +8,15 @@ import "./form-events.styles.css"
 import { SelectList } from "../SelectList"
 
 
-export function FormEvents() {
+export function FormEvents({ themes }) {
     return (
         <form className="form-event">
-            <TitleForm>Preencha para criar um evento:</TitleForm>
+            <TitleForm>Fill in to create an event:</TitleForm>
 
             <div className="fields-area">
                 <FieldSet>
                     <Label htmlFor="nome">
-                        Qual o nome do evento?
+                        What is the name of the event?
                     </Label>
                     <FieldInput
                         type="text"
@@ -25,9 +25,22 @@ export function FormEvents() {
                         name="nomeEvento"
                     />
                 </FieldSet>
+
+                <FieldSet>
+                    <Label htmlFor="nome">
+                        What is the image URL for the event?
+                    </Label>
+                    <FieldInput
+                        type="text"
+                        id="nome"
+                        placeholder="https://..."
+                        name="nomeEvento"
+                    />
+                </FieldSet>
+
                 <FieldSet>
                     <Label htmlFor="dataEvent">
-                        Data do evento:
+                        Date of the event:
                     </Label>
                     <FieldInput
                         type="date"
@@ -37,15 +50,15 @@ export function FormEvents() {
                 </FieldSet>
 
                 <FieldSet>
-                    <Label htmlFor="dataEvent">
-                        Tema do evento:
+                    <Label htmlFor="theme">
+                        Event theme:
                     </Label>
-                    <SelectList></SelectList>
+                    <SelectList id="theme" name="theme" items={themes}></SelectList>
                 </FieldSet>
 
                 <div className="action-button">
                     <Button>
-                        Criar evento
+                        Create event
                     </Button>
                 </div>
             </div>
