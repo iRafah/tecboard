@@ -8,44 +8,62 @@ import "./form-events.styles.css"
 import { SelectList } from "../SelectList"
 
 
-export function FormEvents({ themes }) {
+export function FormEvents({ themes, whenSubmitted }) {
+
+    function handleEventSubmit(formData) {
+        console.log("Event created!", formData)
+
+        const event =
+        {
+            folder: formData.get('eventImage'),
+            theme: themes.find(function (item) {
+                return item.id == formData.get('theme')
+            }),
+            date: new Date(formData.get('dateEvent')),
+            title: formData.get('nameEvent')
+        }
+
+
+        whenSubmitted(event)
+    }
+
     return (
-        <form className="form-event">
+        <form className="form-event" action={handleEventSubmit}>
             <TitleForm>Fill in to create an event:</TitleForm>
 
             <div className="fields-area">
                 <FieldSet>
-                    <Label htmlFor="nome">
+                    <Label htmlFor="nameEvent">
                         What is the name of the event?
                     </Label>
                     <FieldInput
                         type="text"
-                        id="nome"
+                        id="nameEvent"
                         placeholder="Summer dev hits"
-                        name="nomeEvento"
+                        name="nameEvent"
                     />
                 </FieldSet>
 
                 <FieldSet>
-                    <Label htmlFor="nome">
+                    <Label htmlFor="eventImage">
                         What is the image URL for the event?
                     </Label>
                     <FieldInput
                         type="text"
-                        id="nome"
+                        id="eventImage"
                         placeholder="https://..."
-                        name="nomeEvento"
+                        name="eventImage"
                     />
                 </FieldSet>
 
                 <FieldSet>
-                    <Label htmlFor="dataEvent">
+                    <Label htmlFor="dateEvent">
                         Date of the event:
                     </Label>
                     <FieldInput
                         type="date"
-                        id="dataEvent"
-                        name="dataEvent"
+                        id="dateEvent"
+                        name="dateEvent"
                     />
                 </FieldSet>
 
