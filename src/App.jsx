@@ -46,6 +46,12 @@ function App() {
       theme: themes[0],
       date: new Date(),
       title: 'Women in Front'
+    },
+    {
+      folder: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
+      theme: themes[4],
+      date: new Date(),
+      title: 'Man in DevOps'
     }
   ])
 
@@ -65,18 +71,31 @@ function App() {
 
       <FormEvents themes={themes} whenSubmitted={handleEventCreated} />
 
-      {themes.map(function (item) {
-        return (
-          <section key={item.id}>
-            <Theme key={item.id} theme={item} />
+      <section className="container">
+        {themes.map(function (theme) {
 
-            {events.map(function (item, index) {
-              return <CardEvent event={item} key={index} />
-            })}
-          </section>
-        )
-      })}
+          if (!events.some(function (event) {
+            return event.theme.id == theme.id
+          })) {
+            return null
+          }
 
+          return (
+            <section key={theme.id}>
+              <Theme key={theme.id} theme={theme} />
+              <div className="events">
+                {events
+                  .filter(function (event) {
+                    return event.theme.id == theme.id
+                  })
+                  .map(function (event, index) {
+                    return <CardEvent event={event} key={index} />
+                  })}
+              </div>
+            </section>
+          )
+        })}
+      </section>
     </main>
   )
 }
