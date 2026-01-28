@@ -1,16 +1,63 @@
-# React + Vite
+![Project cover](banner.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Tecboard
 
-Currently, two official plugins are available:
+Your technology events hub! This project was built with React and aims to make it easier to create and view events focused on topics such as Front-end, Back-end, Cloud, and much more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔨 Project features
 
-## React Compiler
+- Creation of custom events with image, title, date, and theme.
+- Organization of events by theme.
+- Data persistence in memory (local React state).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Project screenshot](screenshot.png)
 
-## Expanding the ESLint configuration
+## ✔️ Techniques and technologies used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React + Vite**: Lightweight structure for React development.
+- **useState**: For managing the local state of events.
+- **Componentization**: Clear separation of responsibilities by component.
+- **Forms with `FormData`**: Structured data capture.
+- **CSS Modules**: Styles organized per component with local scope.
+- **Google Fonts (Work Sans + Orbitron)**: Custom typography.
+
+## 🛠️ How to run the project
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/iRafah/tecboard.git
+cd tecboard
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Run the project locally:
+
+```bash
+npm run dev
+```
+
+4. Open it in your browser:
+
+```
+http://localhost:5173
+```
+
+## 📚 About the project
+
+This project was developed for educational purposes to practice:
+
+- Componentization in React.
+- JSX.
+- Form and data handling.
+- Styling with CSS.
+- Use of props and conditional rendering
+
+Ideal for those who want to take their first steps in React by building something visual, interactive, and useful.
+
+If you want to add deployment with Vercel, persistence with LocalStorage, or a backend with Firebase, this project is a great foundation to evolve!
